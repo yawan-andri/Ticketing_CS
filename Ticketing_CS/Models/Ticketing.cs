@@ -8,14 +8,16 @@ namespace Ticketing_CS.Models
         public string Ticket { get; set; }
         public int LevelId {  get; set; }
         [ForeignKey("LevelId")]
+        public ChoiceList? Level { get; set; }
         public int IsUrgentId {  get; set; }
         [ForeignKey("IsUrgentId")]
+        public ChoiceList? IsUrgent { get; set; }
         public int? StatusId { get; set; }
         [ForeignKey("StatusId")]
+        public ChoiceList? Status { get; set; }
         public DateTime DateInput { get; set; }
-        public int UserInput {  get; set; }
-        [ForeignKey("UserInput")]
+        public int? UserId {  get; set; }
+        [ForeignKey("UserId")]
         public bool IsActive { get; set; }
-        public ChoiceList? ChoiceList { get; set; }
     }
 }
