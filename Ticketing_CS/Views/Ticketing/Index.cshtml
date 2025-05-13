@@ -1,0 +1,33 @@
+﻿@model List<Ticketing_CS.Models.Ticketing>
+@{
+	ViewData["Title"] = "Ticketing";
+}
+
+<div class="container">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Ticket</th>
+				<th>Level</th>
+				<th>Urgency</th>
+				<th>Status</th>
+				<th>User</th>
+				<th>Date</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var ticketing in Model)
+			{
+				<tr>
+					<td>@ticketing.Ticket</td>
+					<td>@ticketing.Level?.Choice</td>
+					<td>@ticketing.Urgency?.Choice</td>
+					<td>@ticketing.Status?.Choice</td>
+					<td>@ticketing.User?.UserName</td>
+					<td>@ticketing.DateInput.ToString("yyyy-MM-dd")</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
